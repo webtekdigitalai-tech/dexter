@@ -21,6 +21,7 @@ const FAST_MODELS: Record<string, string> = {
   anthropic: 'claude-haiku-4-5',
   google: 'gemini-3-flash-preview',
   xai: 'grok-4-1-fast-reasoning',
+  deepseek: 'deepseek-chat',
   openrouter: 'openrouter:openai/gpt-4o-mini',
 };
 
@@ -80,6 +81,15 @@ const MODEL_PROVIDERS: Record<string, ModelFactory> = {
       apiKey: getApiKey('XAI_API_KEY', 'xAI'),
       configuration: {
         baseURL: 'https://api.x.ai/v1',
+      },
+    }),
+  'deepseek-': (name, opts) =>
+    new ChatOpenAI({
+      model: name,
+      ...opts,
+      apiKey: getApiKey('DEEPSEEK_API_KEY', 'DeepSeek'),
+      configuration: {
+        baseURL: 'https://api.deepseek.com',
       },
     }),
   'openrouter:': (name, opts) =>

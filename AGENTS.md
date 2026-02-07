@@ -45,8 +45,8 @@
 
 ## LLM Providers
 
-- Supported: OpenAI (default), Anthropic, Google, xAI (Grok), OpenRouter, Ollama (local).
-- Default model: `gpt-5.2`. Provider detection is prefix-based (`claude-` -> Anthropic, `gemini-` -> Google, etc.).
+- Supported: OpenAI (default), Anthropic, Google, xAI (Grok), DeepSeek, OpenRouter, Ollama (local).
+- Default model: `gpt-5.2`. Provider detection is prefix-based (`claude-` -> Anthropic, `gemini-` -> Google, `deepseek-` -> DeepSeek, etc.).
 - Fast models for lightweight tasks: see `FAST_MODELS` map in `src/model/llm.ts`.
 - Anthropic uses explicit `cache_control` on system prompt for prompt caching cost savings.
 - Users switch providers/models via `/model` command in the CLI.
@@ -78,7 +78,7 @@
 
 ## Environment Variables
 
-- LLM keys: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GOOGLE_API_KEY`, `XAI_API_KEY`, `OPENROUTER_API_KEY`
+- LLM keys: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GOOGLE_API_KEY`, `XAI_API_KEY`, `DEEPSEEK_API_KEY`, `OPENROUTER_API_KEY`
 - Ollama: `OLLAMA_BASE_URL` (default `http://127.0.0.1:11434`)
 - Finance: `FINANCIAL_DATASETS_API_KEY`
 - Search: `EXASEARCH_API_KEY` (preferred), `TAVILY_API_KEY` (fallback)
